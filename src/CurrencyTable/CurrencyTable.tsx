@@ -4,6 +4,7 @@ import {SpinnerWrapper, Spinner} from './Spinner';
 import {ErrorMessage} from './ErrorMessage';
 import {DataTable} from './DataTable';
 import styled from 'styled-components';
+import {ConversionForm} from './ConversionForm';
 
 const CurrencyWrapper = styled.div`
   background: #fff;
@@ -35,6 +36,7 @@ const BareCurrencyTable:FC = () => {
   if (data != null) {
     return (
       <CurrencyWrapper>
+        <ConversionForm currencies={data} />
         <DataTable currencies={data} />
       </CurrencyWrapper>
     )

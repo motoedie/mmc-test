@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import {CurrencyTable}from './CurrencyTable/CurrencyTable';
 import reportWebVitals from './reportWebVitals';
 import {
   QueryClient,
   QueryClientProvider,
 } from '@tanstack/react-query'
+import {Layout} from './Layout/Layout';
 
 const queryClient = new QueryClient()
 
@@ -16,7 +16,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
-      <CurrencyTable />
+      <Layout>
+        <CurrencyTable />
+      </Layout>
     </QueryClientProvider>
   </React.StrictMode>
 );
